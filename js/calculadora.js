@@ -77,11 +77,6 @@ document.getElementById("coma").onclick = function agregarComa(){
     document.getElementById("visor").innerHTML = stringVisor
 }
 
-document.getElementById("coma").onclick = function agregarComa(){
-    stringVisor = stringVisor.concat('.') 
-    document.getElementById("visor").innerHTML = stringVisor
-}
-
 document.getElementById("igual").onclick = function agregarIgual(){
 
     var stringNum1 = " "
