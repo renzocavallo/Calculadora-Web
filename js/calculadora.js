@@ -113,7 +113,31 @@ document.getElementById("igual").onclick = function agregarIgual(){
                   break              
     } 
 
-stringVisor = stringVisor.concat(Resultado)
+stringResultado = Resultado.toString()  
+
+var parteEntera = 0
+
+for(var i = 0; i < stringResultado.length; i++){
+    if(stringResultado[i] != '.'){
+        parteEntera++
+    }else{
+        break
+    }
+}
+
+var parteDecimal = 0
+
+for(var i = parteEntera+1 ; i < stringResultado.length; i++){
+    parteDecimal = parteDecimal + parseInt(stringResultado[i])
+}
+
+if(parteDecimal != 0){
+   stringVisor = stringVisor.concat(stringResultado)
+}else{
+    var stringResultadoEntero = " "
+   stringResultadoEntero = stringResultado.substring(0,parteEntera)
+    stringVisor = stringVisor.concat(stringResultadoEntero)
+}
 
 document.getElementById("visor").innerHTML = stringVisor
 }
